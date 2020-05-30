@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 5617618816423951096}
   - component: {fileID: 5617618816423951101}
   - component: {fileID: 5617618816423951100}
-  - component: {fileID: 5617618816423951099}
+  - component: {fileID: 8790348714476237511}
   m_Layer: 0
   m_Name: Hubble
   m_TagString: Untagged
@@ -74,7 +74,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: 7782060553211462862, guid: 92a7cf0271c9b124a8d37fd017e2ec23,
+  m_Sprite: {fileID: -4700837809889180510, guid: a867668b1907968409d9668d395438e8,
     type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -152,7 +152,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.9375, y: 1.8125}
   m_EdgeRadius: 0
---- !u!114 &5617618816423951099
+--- !u!114 &8790348714476237511
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -161,7 +161,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 5617618816423951079}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dfe63d6f0a01bec479d3ae0e16dd8fd7, type: 3}
+  m_Script: {fileID: 11500000, guid: 7525604277c7f4e4ba993920eba90b45, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   m_accelerationRate: 10

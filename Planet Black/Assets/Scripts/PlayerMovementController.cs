@@ -2,8 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-[RequireComponent(typeof(Rigidbody2D))][RequireComponent(typeof(BoxCollider2D))]
-public class CharacterController : MonoBehaviour
+[RequireComponent(typeof(Rigidbody2D))]
+[RequireComponent(typeof(BoxCollider2D))]
+public class PlayerMovementController : MonoBehaviour
 {
     [SerializeField, Tooltip("How fast will the player accelerate?")]
     private float m_accelerationRate;
