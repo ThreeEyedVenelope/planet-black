@@ -4,10 +4,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+
 public class MainMenuConroller : MonoBehaviour
 {
     public GameObject CreditsMenuUI;
     public GameObject MainMenuUI;
+
     /// <summary>
     /// Sets credits panel to active and Main Menu panel inactive
     /// </summary>
@@ -16,21 +18,24 @@ public class MainMenuConroller : MonoBehaviour
         CreditsMenuUI.SetActive(false);
         MainMenuUI.SetActive(true);
     }
-    //Put actual game in the 1st index to play game.
+
     public void PlayGame ()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);  
     }
+
     public void Credits()
     {
         MainMenuUI.SetActive(false);
         CreditsMenuUI.SetActive(true);
     }
+
     public void Quit()
     {
         Application.Quit();
         Debug.Log("Application is closed");
     }
+
     /// <summary>
     /// Sets main menu panel to active and credits panel inactive
     /// </summary>
@@ -39,6 +44,5 @@ public class MainMenuConroller : MonoBehaviour
         CreditsMenuUI.SetActive(false);
         MainMenuUI.SetActive(true);
     }
-    
 }
 
