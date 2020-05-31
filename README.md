@@ -1,7 +1,11 @@
 # Planet Black
 
 ## Contributors 
-- Rob Sandoval
-- Scott Little (ExScottibur)
-- ThreeEyedVenelope (CATTATONICAT aka. Apocalyptic Kitty aka. J aka. Jisu Oh)
-- WiseWizard (Chris Villapuda)
+- **Rob Sandoval
+  Environment Art 
+- **Scott Little (ExScottibur)
+  Programming | Level Design
+- **ThreeEyedVenelope (CATTATONICAT aka. Apocalyptic Kitty aka. J aka. Jisu Oh)
+  Characters | Animation | Background Music 
+- **WiseWizard (Chris Villapuda)
+  Story | Level Design
