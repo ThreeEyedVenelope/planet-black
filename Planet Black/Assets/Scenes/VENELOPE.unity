@@ -324,6 +324,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Hubble
       objectReference: {fileID: 0}
+    - target: {fileID: 5617618816423951079, guid: 53ca67065dbcda746b7aa599e52ba731,
+        type: 3}
+      propertyPath: m_TagString
+      value: Player
+      objectReference: {fileID: 0}
     - target: {fileID: 5617618816423951098, guid: 53ca67065dbcda746b7aa599e52ba731,
         type: 3}
       propertyPath: m_LocalPosition.x
