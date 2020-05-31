@@ -63,7 +63,9 @@ public class PlayerMovementController : MonoBehaviour
 
     private void FixedUpdate()
     {
-        HorizontalMovementHandler();
+        // If the dialogue box is on, then don't allow movement
+        if (GameObject.FindGameObjectWithTag("DialogueBox") == null)
+            HorizontalMovementHandler();
     }
 
     /// <summary>
