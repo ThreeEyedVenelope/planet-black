@@ -5,6 +5,10 @@ using UnityEngine;
 using UnityEngine.UI;
 
 /// <summary>
+/// NOTE:
+///     This script handles one person dialogue and handles 
+/// the name & dialogue text as separate objects.
+/// 
 /// Implementation instructions:
 ///     1. Create an empty game object in the scene and name it DialogueManager
 ///     2. Manually assign via drag and drop the:

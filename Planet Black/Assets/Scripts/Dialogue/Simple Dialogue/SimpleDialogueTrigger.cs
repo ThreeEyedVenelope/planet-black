@@ -3,16 +3,16 @@ using System.Collections.Generic;
 using UnityEngine;
 
 /// <summary>
-/// This script is for triggering dialogue at a location once
+/// This script looks for the SimpleDialogueManager
 /// </summary>
-public class DialogueTrigger : MonoBehaviour
+public class SimpleDialogueTrigger : MonoBehaviour
 {
     [SerializeField]
-    private Dialogue m_dialogue;
+    private SimpleDialogue m_dialogue;
 
-    public void TriggerDialogue()
+    public void TriggerSimpleDialogue()
     {
-        FindObjectOfType<DialogueManager>().StartDialogue(m_dialogue);
+        FindObjectOfType<SimpleDialogueManager>().StartSimpleDialogue(m_dialogue);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -21,7 +21,7 @@ public class DialogueTrigger : MonoBehaviour
         {
             if (GetComponent<BoxCollider2D>().isTrigger)
             {
-                TriggerDialogue();
+                TriggerSimpleDialogue();
                 Destroy(this.gameObject);
             }
         }

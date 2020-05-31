@@ -2,6 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// Used for more complex dialogue and will have the names of the speakers
+/// as separate text objects
+/// </summary>
 [System.Serializable]
 public class Dialogue
 {
