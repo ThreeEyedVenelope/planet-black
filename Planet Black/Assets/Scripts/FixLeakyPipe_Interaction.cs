@@ -4,14 +4,12 @@ using UnityEngine;
 
 public class FixLeakyPipe_Interaction : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    public void FixLeakyPipe()
     {
-        
+        Destroy(this.gameObject);
     }
 
-    // Update is called once per frame
-    void Update()
+    private void OnTriggerStay2D(Collider2D collision)
     {
         
     }

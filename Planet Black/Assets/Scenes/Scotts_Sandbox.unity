@@ -5178,6 +5178,7 @@ GameObject:
   - component: {fileID: 523202243}
   - component: {fileID: 523202242}
   - component: {fileID: 523202244}
+  - component: {fileID: 523202245}
   m_Layer: 0
   m_Name: PipeLeak_Interaction
   m_TagString: Untagged
@@ -5277,6 +5278,18 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.59461975, y: 1.6935096}
   m_EdgeRadius: 0
+--- !u!114 &523202245
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 523202241}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 206757bfb400b3b41bed91935e379549, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &632508372
 GameObject:
   m_ObjectHideFlags: 0
@@ -6170,14 +6183,18 @@ MonoBehaviour:
   m_GameObject: {fileID: 1776867193}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 209d42789bc363d4486a9a0c68ebc290, type: 3}
+  m_Script: {fileID: 11500000, guid: d853419b413a5604c8b18a241b929fcb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_dialogue:
+  m_firstInteractionDialogue:
     m_name: Hubble
     m_sentences:
     - Leak
     - Need toolbox
+  m_secondInteractionDialogue:
+    m_name: Hubble
+    m_sentences:
+    - Leak fixed
 --- !u!1 &1933751668
 GameObject:
   m_ObjectHideFlags: 0

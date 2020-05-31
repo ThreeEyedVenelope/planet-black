@@ -2,6 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// This script is for triggering dialogue at a location once
+/// </summary>
 public class DialogueTrigger : MonoBehaviour
 {
     [SerializeField]
