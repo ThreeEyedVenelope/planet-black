@@ -11,4 +11,16 @@ public class DialogueTrigger : MonoBehaviour
     {
         FindObjectOfType<DialogueManager>().StartDialogue(m_dialogue);
     }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.tag == "Player" && GetComponent<BoxCollider2D>() != null)
+        {
+            if (GetComponent<BoxCollider2D>().isTrigger)
+            {
+                TriggerDialogue();
+                Destroy(this.gameObject);
+            }
+        }
+    }
 }
