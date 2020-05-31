@@ -1,19 +1,16 @@
 fileFormatVersion: 2
-guid: a867668b1907968409d9668d395438e8
+guid: 0cd77eb2b4eb853408c33989b9738325
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -4700837809889180510
-    second: HubbleFrontSpriteSheet_0
+      213: -2110459681809870378
+    second: HubbleFrontSpriteSheet 1_0
   - first:
-      213: -5129829245752071023
-    second: HubbleFrontSpriteSheet_1
+      213: 2588309429831318235
+    second: HubbleFrontSpriteSheet 1_1
   - first:
-      213: -1378893952477193281
-    second: HubbleFrontSpriteSheet_2
-  - first:
-      213: -1609037689706679807
-    second: HubbleFrontSpriteSheet_3
+      213: 5614906188527602675
+    second: HubbleFrontSpriteSheet 1_2
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -99,7 +96,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: HubbleFrontSpriteSheet_0
+      name: HubbleFrontSpriteSheet 1_0
       rect:
         serializedVersion: 2
         x: 0
@@ -113,14 +110,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2a484d20be443ceb0800000000000000
-      internalID: -4700837809889180510
+      spriteID: 6d150f0e91426b2e0800000000000000
+      internalID: -2110459681809870378
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: HubbleFrontSpriteSheet_1
+      name: HubbleFrontSpriteSheet 1_1
       rect:
         serializedVersion: 2
         x: 15
@@ -134,14 +131,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 19ca980ea7f2fc8b0800000000000000
-      internalID: -5129829245752071023
+      spriteID: bdab3e586b58be320800000000000000
+      internalID: 2588309429831318235
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: HubbleFrontSpriteSheet_2
+      name: HubbleFrontSpriteSheet 1_2
       rect:
         serializedVersion: 2
         x: 30
@@ -155,29 +152,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: fbb99a3814f2ddce0800000000000000
-      internalID: -1378893952477193281
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: HubbleFrontSpriteSheet_3
-      rect:
-        serializedVersion: 2
-        x: 45
-        y: 0
-        width: 15
-        height: 29
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 10271da0fbc8ba9e0800000000000000
-      internalID: -1609037689706679807
+      spriteID: 3fb845eed672ced40800000000000000
+      internalID: 5614906188527602675
       vertices: []
       indices: 
       edges: []
