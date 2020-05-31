@@ -24,11 +24,14 @@ public class PlayerMovementController : MonoBehaviour
 
     private SpriteRenderer m_playerRenderer;
 
+    private Animator m_animator = null;
+
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
         m_playerRigidbody = GetComponent<Rigidbody2D>();
         m_playerRenderer = GetComponent<SpriteRenderer>();
+        m_animator = GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -70,6 +73,9 @@ public class PlayerMovementController : MonoBehaviour
     {
         if (!Mathf.Approximately(m_horizontalInput, 0.0f))
         {
+            // Display player's walking animation 
+            m_animator.SetBool("HubbleIsWalking", true);
+
             m_playerRigidbody.AddForce(Vector2.right * m_horizontalInput * (m_maxWalkSpeed * m_accelerationRate));
 
             Vector2 clampedVelocity = m_playerRigidbody.velocity;
@@ -88,20 +94,21 @@ public class PlayerMovementController : MonoBehaviour
                 m_playerRenderer.flipX = false;
             }
         }
-        else if (m_isGrounded && Mathf.Approximately(m_horizontalInput, 0.0f))
-        {
-            Vector2 stoppingVelocity = m_playerRigidbody.velocity;
-
-            stoppingVelocity = new Vector2(0.0f, 0.0f);
-
-            m_playerRigidbody.velocity = stoppingVelocity;
-        }
         else if (Mathf.Approximately(m_horizontalInput, 0.0f))
         {
+            // Stop displaying player's walking animation
+            m_animator.SetBool("HubbleIsWalking", false);
+
             Vector2 stoppingVelocity = m_playerRigidbody.velocity;
 
-            stoppingVelocity.x = 0.0f;
-
+            if (m_isGrounded)
+            {
+                stoppingVelocity = new Vector2(0.0f, 0.0f);
+            }
+            else
+            {
+                stoppingVelocity.x = 0.0f;  
+            }
             m_playerRigidbody.velocity = stoppingVelocity;
         }
     }
