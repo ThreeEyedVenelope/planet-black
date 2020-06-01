@@ -1,6 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
-using System.Runtime.InteropServices.ComTypes;
+//using System.Runtime.InteropServices.ComTypes;
 using UnityEngine;
 
 public class Double_SimpleDialogueTrigger : MonoBehaviour
@@ -25,10 +25,10 @@ public class Double_SimpleDialogueTrigger : MonoBehaviour
     private bool m_requireToolbox = false;
 
     [SerializeField, Tooltip("Does the player need the green keycard to initiate the second interaction?")]
-    private bool m_requireGreenKeycard = false;
+    private bool m_requireStorageKeycard = false;
 
     [SerializeField, Tooltip("Does the player need the orange keycard to initiate the second interaction?")]
-    private bool m_requireOrangeKeycard = false;
+    private bool m_requireBridgeKeycard = false;
 
     public bool RequireUnlockCondition { get { return m_requireUnlockCondition; } set { m_requireUnlockCondition = value; } }
 
@@ -76,29 +76,51 @@ public class Double_SimpleDialogueTrigger : MonoBehaviour
                 }
                 else
                 {
-                    if (m_completedFirstInteraction == false)
+                    if (m_completedFirstInteraction == false || m_lockConditionMet)
                     {
                         TriggerSimpleDialogue();
                     }
-                    else if (m_requireToolbox == collision.GetComponent<PlayerInteractionHandler>().HasToolbox)
+
+                    if (m_requireToolbox == true)
                     {
-                        m_lockConditionMet = true;
-                        TriggerSimpleDialogue();
-                        collision.GetComponent<PlayerInteractionHandler>().HasToolbox = false;
+                        if (collision.GetComponent<PlayerInteractionHandler>().HasToolbox)
+                        {
+                            m_lockConditionMet = true;
+                            TriggerSimpleDialogue();
+                            collision.GetComponent<PlayerInteractionHandler>().HasToolbox = false;
+                        }
                     }
-                    else if (m_requireGreenKeycard == collision.GetComponent<PlayerInteractionHandler>().HasStorageRoomKeycard)
+                    else if (m_requireStorageKeycard == true)
                     {
-                        m_lockConditionMet = true;
-                        collision.GetComponent<PlayerInteractionHandler>().HasStorageRoomKeycard = false;
+                        if (collision.GetComponent<PlayerInteractionHandler>().HasStorageRoomKeycard)
+                        {
+                            m_lockConditionMet = true;
+                            TriggerSimpleDialogue();
+                            collision.GetComponent<PlayerInteractionHandler>().HasStorageRoomKeycard = false;
+                        }                        
                     }
-                    else if (m_requireOrangeKeycard == collision.GetComponent<PlayerInteractionHandler>().HasBridgeKeycard)
+                    else if (m_requireBridgeKeycard == true)
                     {
-                        m_lockConditionMet = true;
-                        TriggerSimpleDialogue();
-                        collision.GetComponent<PlayerInteractionHandler>().HasBridgeKeycard = false;
+                        if (collision.GetComponent<PlayerInteractionHandler>().HasBridgeKeycard)
+                        {
+                            m_lockConditionMet = true;
+                            TriggerSimpleDialogue();
+                            collision.GetComponent<PlayerInteractionHandler>().HasBridgeKeycard = false;
+                        }                        
                     }
-                }
-                
+
+                    if (m_lockConditionMet)
+                    {
+                        if (m_destroyParent == true)
+                        {
+                            Destroy(this.transform.parent.gameObject);
+                        }
+                        else
+                        {
+                            Destroy(this.gameObject);
+                        }
+                    }
+                }                
             }
         }
     }
@@ -107,7 +129,7 @@ public class Double_SimpleDialogueTrigger : MonoBehaviour
     {
         if (collision.tag == "Player" && GetComponent<BoxCollider2D>() != null)
         {
-            if (GetComponent<BoxCollider2D>().isTrigger)
+            if (GetComponent<BoxCollider2D>().isTrigger && m_completedFirstInteraction == false)
             {
                 m_completedFirstInteraction = true;
             }
