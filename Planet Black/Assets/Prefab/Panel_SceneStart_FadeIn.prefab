@@ -12,7 +12,8 @@ GameObject:
   - component: {fileID: 2026694336392163695}
   - component: {fileID: 2026694336392163692}
   - component: {fileID: 2026694336392163693}
-  - component: {fileID: 2026694336392163682}
+  - component: {fileID: 1394155866}
+  - component: {fileID: 1394155871}
   m_Layer: 5
   m_Name: Panel_SceneStart_FadeIn
   m_TagString: Untagged
@@ -95,7 +96,7 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &2026694336392163682
+--- !u!114 &1394155866
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -104,6 +105,33 @@ MonoBehaviour:
   m_GameObject: {fileID: 2026694336392163680}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7f4c1f2d7b9889c4ab460d9eaf06507c, type: 3}
+  m_Script: {fileID: 11500000, guid: af68e9cbb54fe644e9ebc0156809bb1d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_dialogue:
+    m_sentences:
+    - 'On-board A.I.
+
+
+
+
+      Leak detected in Hallway-A'
+    - 'On-board A.I.
+
+
+
+
+      Engineer please report to hallway-A'
+--- !u!114 &1394155871
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2026694336392163680}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 20afd71bbec72a6439a20d2a6969fd8e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_hubbleCryoChamber: {fileID: 0}
