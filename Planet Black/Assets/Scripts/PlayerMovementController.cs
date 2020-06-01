@@ -16,6 +16,9 @@ public class PlayerMovementController : MonoBehaviour
     [SerializeField, Tooltip("The fastest the player will climb ladders.")]
     private float m_maxClimbingSpeed;
 
+    [SerializeField, Tooltip("The child of the object that makes up their shadow.")]
+    private GameObject m_playerShadowObject;
+
     protected bool m_canMove = false;
 
     public bool CanMove { get { return m_canMove; } set { m_canMove = value; } }
@@ -160,6 +163,8 @@ public class PlayerMovementController : MonoBehaviour
         if (collision.gameObject.tag == "Ground")
         {
             m_isGrounded = true;
+
+            m_playerShadowObject.SetActive(true);
         }
     }
 
@@ -168,6 +173,8 @@ public class PlayerMovementController : MonoBehaviour
         if (collision.gameObject.tag == "Ground")
         {
             m_isGrounded = false;
+
+            m_playerShadowObject.SetActive(false);
         }
     }
 }
