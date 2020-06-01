@@ -33,5 +33,23 @@ public class PickupObject : MonoBehaviour
 
             Destroy(this.gameObject);
         }
+        else if (m_isStorageRoomKeycard)
+        {
+            //TODO Debug Log to Check pickup object trigger
+            Debug.Log("This is a Storage room Keycard and should be picked up and destroyed");
+
+            GetComponent<SimpleDialogueTrigger>().TriggerSimpleDialogue();
+
+            Destroy(this.gameObject);
+        }
+        else if (m_isBridgeKeycard)
+        {
+            //TODO Debug Log to Check pickup object trigger
+            Debug.Log("This is the Keycard to the Bridge and should be picked up and destroyed");
+
+            GetComponent<SimpleDialogueTrigger>().TriggerSimpleDialogue();
+
+            Destroy(this.gameObject);
+        }
     }
 }

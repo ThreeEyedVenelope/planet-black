@@ -130,6 +130,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 10318011}
+  - component: {fileID: 10318012}
+  - component: {fileID: 10318013}
+  - component: {fileID: 10318014}
   m_Layer: 0
   m_Name: StorageRoom_Door
   m_TagString: Untagged
@@ -144,13 +147,112 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 10318010}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 29.126183, y: -4.079536, z: -36.66504}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 33.62, y: -1.2502563, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 67
+  m_Children:
+  - {fileID: 2132502653}
+  m_Father: {fileID: 313051304}
+  m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!61 &10318012
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 10318010}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.035313606, y: -0.10123658}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1.0160847, y: 3.5932803}
+  m_EdgeRadius: 0
+--- !u!114 &10318013
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 10318010}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7447471b4dd1a1f4e93c9e1d26fdd375, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_firstInteractionDialogue:
+    m_sentences:
+    - 'Hubble
+
+
+      Hey! are you alright in there?"'
+    - 'Hurt person
+
+
+      Hubble is that you?"'
+    - "Hubble \n\nRamirez? Are you ok, I see a lot of blood on the floor. Did you
+      hurt yourself when the lights turned off.\r\n"
+    - "Ramirez \n\nI'm not sure. I can't really remember. I hit my head pretty badly
+      I guess. Can you get me out? I don't think I can get up."
+    - 'Hubble
+
+
+      I don''t have the keycard, but I think I know where the spare
+      is.'
+    - 'Hubble
+
+
+      Don''t worry I''ll get you out soon.'
+    - 'Ramirez
+
+
+      Thanks Hubble.'
+    - 'Hubble
+
+
+      Jackson would always go to storage to grab fertilizer for the
+      plants. So, I should check hydroponics.'
+  m_secondInteractionDialogue:
+    m_sentences:
+    - 'Hubble
+
+
+      Ramirez I''m here, stay with me here pal.'
+    - 'Hubble
+
+
+      Oh god!'
+  m_destroyParent: 0
+  m_requireUnlockCondition: 1
+  m_requireToolbox: 0
+  m_requireStorageKeycard: 1
+  m_requireBridgeKeycard: 0
+--- !u!114 &10318014
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 10318010}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b80e68a000081714cbc9376bf643a851, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_doorObject: {fileID: 2132502652}
 --- !u!1 &42215231
 GameObject:
   m_ObjectHideFlags: 0
@@ -1568,7 +1670,7 @@ Transform:
   - {fileID: 503976026}
   - {fileID: 1467736395}
   - {fileID: 1101558298}
-  - {fileID: 2132502653}
+  - {fileID: 10318011}
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -3527,7 +3629,7 @@ GameObject:
   - component: {fileID: 543482935}
   m_Layer: 0
   m_Name: OrangeKeycard
-  m_TagString: Untagged
+  m_TagString: Pickup
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4530,7 +4632,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 707035771}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 13.85, y: 2.99, z: 0}
+  m_LocalPosition: {x: 13.85, y: 2.53, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -7778,9 +7880,11 @@ GameObject:
   - component: {fileID: 1304040452}
   - component: {fileID: 1304040451}
   - component: {fileID: 1304040453}
+  - component: {fileID: 1304040454}
+  - component: {fileID: 1304040455}
   m_Layer: 0
   m_Name: GreenKeycard
-  m_TagString: Untagged
+  m_TagString: Pickup
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7842,13 +7946,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1304040450}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 21.44, y: 2.37, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0.40744695, w: 0.91322887}
+  m_LocalPosition: {x: 21.44, y: 1.751, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 19
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -48.089}
 --- !u!114 &1304040453
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7864,6 +7968,47 @@ MonoBehaviour:
   m_dialogue:
     m_sentences:
     - Not a very secretive spot...
+--- !u!61 &1304040454
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1304040450}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 0.5625, y: 0.375}
+    newSize: {x: 0.5625, y: 0.375}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.5625, y: 0.375}
+  m_EdgeRadius: 0
+--- !u!114 &1304040455
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1304040450}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ba3b0843aa83db14d9365f63fd3d2527, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_isToolbox: 0
+  m_isStorageRoomKeycard: 1
+  m_isBridgeKeycard: 0
 --- !u!1 &1320098392
 GameObject:
   m_ObjectHideFlags: 0
@@ -8255,7 +8400,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1425549019}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 20.86, y: 2.93, z: 0}
+  m_LocalPosition: {x: 20.86, y: 2.47, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -10373,7 +10518,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1941087273}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 27.63, y: 3.05, z: 0}
+  m_LocalPosition: {x: 27.63, y: 2.59, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -11176,7 +11321,7 @@ GameObject:
   - component: {fileID: 2132502655}
   - component: {fileID: 2132502654}
   m_Layer: 0
-  m_Name: StorageRoomDoor
+  m_Name: StorageRoomDoorBody
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -11190,71 +11335,38 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2132502652}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 33.63345, y: 1.53, z: 291.25}
+  m_LocalPosition: {x: 0.02, y: 2.65, z: 0}
   m_LocalScale: {x: 0.9601945, y: 12.022024, z: 33.562416}
   m_Children: []
-  m_Father: {fileID: 313051304}
-  m_RootOrder: 15
+  m_Father: {fileID: 10318011}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2132502654
-MonoBehaviour:
+--- !u!61 &2132502654
+BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2132502652}
   m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7447471b4dd1a1f4e93c9e1d26fdd375, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_firstInteractionDialogue:
-    m_sentences:
-    - 'Hubble
-
-
-      Hey! are you alright in there?"'
-    - 'Hurt person
-
-
-      Hubble is that you?"'
-    - "Hubble \n\nRamirez? Are you ok, I see a lot of blood on the floor. Did you
-      hurt yourself when the lights turned off.\r\n"
-    - "Ramirez \n\nI'm not sure. I can't really remember. I hit my head pretty badly
-      I guess. Can you get me out? I don't think I can get up."
-    - 'Hubble
-
-
-      I don''t have the keycard, but I think I know where the spare
-      is.'
-    - 'Hubble
-
-
-      Don''t worry I''ll get you out soon.'
-    - 'Ramirez
-
-
-      Thanks Hubble.'
-    - 'Hubble
-
-
-      Jackson would always go to storage to grab fertilizer for the
-      plants. So, I should check hydroponics.'
-  m_secondInteractionDialogue:
-    m_sentences:
-    - 'Hubble
-
-
-      Ramirez I''m here, stay with me here pal.'
-    - 'Hubble
-
-
-      Oh god!'
-  m_destroyParent: 0
-  m_requireUnlockCondition: 1
-  m_requireToolbox: 0
-  m_requireStorageKeycard: 1
-  m_requireBridgeKeycard: 0
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.021262564, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 0.3125, y: 0.3125}
+    newSize: {x: 0.3125, y: 0.3125}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.1282134, y: 0.3125}
+  m_EdgeRadius: 0
 --- !u!95 &2132502655
 Animator:
   serializedVersion: 3
@@ -11312,7 +11424,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: 3621df84fbe52af45b39c6221df31baf, type: 3}
   m_Color: {r: 0.16981131, g: 0.16981131, b: 0.16981131, a: 1}
   m_FlipX: 0
