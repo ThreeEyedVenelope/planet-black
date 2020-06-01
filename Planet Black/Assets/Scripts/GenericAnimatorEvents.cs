@@ -49,7 +49,7 @@ public class GenericAnimatorEvents : MonoBehaviour
     {
         if (m_hubbleGameObject != null)
         {
-            m_hubbleGameObject.GetComponent<SpriteRenderer>().sortingOrder = m_defaultPlayerSortingOrder;
+            m_hubbleGameObject.GetComponent<SpriteRenderer>().sortingOrder = m_hubbleShadowGameObject.GetComponent<SpriteRenderer>().sortingOrder = m_defaultPlayerSortingOrder;
         }
     }
 

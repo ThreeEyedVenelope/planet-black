@@ -8,9 +8,4 @@ public class FixLeakyPipe_Interaction : MonoBehaviour
     {
         Destroy(this.gameObject);
     }
-
-    private void OnTriggerStay2D(Collider2D collision)
-    {
-        
-    }
 }

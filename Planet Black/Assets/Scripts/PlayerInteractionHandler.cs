@@ -36,7 +36,7 @@ public class PlayerInteractionHandler : MonoBehaviour
                 m_hasBridgeKeycard = true;
             }
 
-            collision
+            collision.GetComponent<PickupObject>().RazeThisObject();
         }
     }
 }
