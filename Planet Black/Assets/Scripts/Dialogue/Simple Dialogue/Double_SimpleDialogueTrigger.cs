@@ -95,6 +95,7 @@ public class Double_SimpleDialogueTrigger : MonoBehaviour
                         if (collision.GetComponent<PlayerInteractionHandler>().HasStorageRoomKeycard)
                         {
                             m_lockConditionMet = true;
+                            collision.GetComponentInChildren<Animator>().SetBool("isOpening", true);
                             TriggerSimpleDialogue();
                             collision.GetComponent<PlayerInteractionHandler>().HasStorageRoomKeycard = false;
                         }                        
@@ -104,6 +105,7 @@ public class Double_SimpleDialogueTrigger : MonoBehaviour
                         if (collision.GetComponent<PlayerInteractionHandler>().HasBridgeKeycard)
                         {
                             m_lockConditionMet = true;
+                            collision.GetComponentInChildren<Animator>().SetBool("isOpening", true);
                             TriggerSimpleDialogue();
                             collision.GetComponent<PlayerInteractionHandler>().HasBridgeKeycard = false;
                         }                        
@@ -111,7 +113,16 @@ public class Double_SimpleDialogueTrigger : MonoBehaviour
 
                     if (m_lockConditionMet)
                     {
-                        if (m_destroyParent == true)
+                        if (this.transform.tag == "Door")
+                        {
+                            if (GetComponent<Animator>() != null)
+                            {
+                                GetComponent<Animator>().SetBool("IsOpening", true);
+                            }
+
+                            return;
+                        }
+                        else if (m_destroyParent == true)
                         {
                             Destroy(this.transform.parent.gameObject);
                         }
