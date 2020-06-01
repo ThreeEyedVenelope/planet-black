@@ -47,3 +47,15 @@ TagManager:
   - name: Wall
     uniqueID: 3615403851
     locked: 0
+  - name: Pickups
+    uniqueID: 679580023
+    locked: 0
+  - name: Hubble
+    uniqueID: 2991750319
+    locked: 0
+  - name: OuterWall
+    uniqueID: 3412450797
+    locked: 0
+  - name: Misc
+    uniqueID: 2534560881
+    locked: 0
