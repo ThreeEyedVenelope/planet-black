@@ -4,5 +4,11 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/V_MainMenu.unity
+    guid: 42a77c3e135fa9a45975f31c0423d2c0
+  - enabled: 1
+    path: Assets/Scenes/Chris_Greyboxing.unity
+    guid: dfec75377d446d141b336a79238ca167
   m_configObjects: {}
