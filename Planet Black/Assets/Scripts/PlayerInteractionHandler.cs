@@ -1,6 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
-using UnityEditor.Experimental.AssetImporters;
+//using UnityEditor.Experimental.AssetImporters;
 using UnityEngine;
 
 /// <summary>
@@ -8,13 +8,21 @@ using UnityEngine;
 /// </summary>
 public class PlayerInteractionHandler : MonoBehaviour
 {
+    // TODO Serialized for debugging purposes
+    [SerializeField]
     private bool m_hasToolBox = false;
+    [SerializeField]
     private bool m_hasStorageRoomKeycard = false;
+    [SerializeField]
     private bool m_hasBridgeKeycard = false;
+
+    public bool HasToolbox { get { return m_hasToolBox; } set { m_hasToolBox = value; } }
+    public bool HasStorageRoomKeycard { get { return m_hasStorageRoomKeycard; } set { m_hasStorageRoomKeycard = value; } }
+    public bool HasBridgeKeycard { get { return m_hasBridgeKeycard; } set { m_hasBridgeKeycard = value; } }
+
 
     private void OnTriggerEnter2D(Collider2D collision) // changing OnTriggerStay2D to OnTriggerEnter2D
     {
-
         // TODO: Debugging Pickup Interaction
         Debug.Log($"The player has entered a triggerVolume.");
 
@@ -25,15 +33,15 @@ public class PlayerInteractionHandler : MonoBehaviour
 
             if (collision.GetComponent<PickupObject>().IsToolbox)
             {
-                m_hasToolBox = true;
+                HasToolbox = true;
             }
             else if (collision.GetComponent<PickupObject>().IsStorageRoomKeycard)
             {
-                m_hasStorageRoomKeycard = true;
+                HasStorageRoomKeycard = true;
             }
             else if (collision.GetComponent<PickupObject>().IsBridgeKeycard)
             {
-                m_hasBridgeKeycard = true;
+                HasBridgeKeycard = true;
             }
 
             collision.GetComponent<PickupObject>().RazeThisObject();
