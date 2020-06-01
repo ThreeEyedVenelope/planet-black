@@ -16,6 +16,10 @@ public class PlayerMovementController : MonoBehaviour
     [SerializeField, Tooltip("The fastest the player will climb ladders.")]
     private float m_maxClimbingSpeed;
 
+    protected bool m_canMove = false;
+
+    public bool CanMove { get { return m_canMove; } set { m_canMove = value; } }
+
     private float m_horizontalInput, m_verticalInput;
 
     private bool m_isGrounded;
@@ -63,7 +67,11 @@ public class PlayerMovementController : MonoBehaviour
 
     private void FixedUpdate()
     {
-        HorizontalMovementHandler();
+        // If the dialogue box is on, then don't allow movement
+        if (GameObject.FindGameObjectWithTag("DialogueBox") == null)
+        {
+            HorizontalMovementHandler();
+        }
     }
 
     /// <summary>
