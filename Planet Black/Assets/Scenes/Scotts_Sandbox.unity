@@ -391,6 +391,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 199d99b2b966a7f45afc6b2814c62020, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_hasToolBox: 0
+  m_hasStorageRoomKeycard: 0
+  m_hasBridgeKeycard: 0
 --- !u!1 &632508372
 GameObject:
   m_ObjectHideFlags: 0
@@ -2711,6 +2714,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: PipeLeak_Interaction
+      objectReference: {fileID: 0}
+    - target: {fileID: 6382368527356006211, guid: c5f77ed44b57a254e86f552c7c76d775,
+        type: 3}
+      propertyPath: m_requireUnlockCondition
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6382368527356006211, guid: c5f77ed44b57a254e86f552c7c76d775,
+        type: 3}
+      propertyPath: m_requireToolbox
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c5f77ed44b57a254e86f552c7c76d775, type: 3}
