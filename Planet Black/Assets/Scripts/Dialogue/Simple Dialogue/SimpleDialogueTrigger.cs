@@ -29,19 +29,4 @@ public class SimpleDialogueTrigger : MonoBehaviour
             }
         }
     }
-
-    //private void OnTriggerStay2D(Collider2D collision)
-    //{
-    //    if (collision.tag == "Player" && GetComponent<BoxCollider2D>() != null)
-    //    {
-    //        if (GetComponent<BoxCollider2D>().isTrigger)
-    //        {
-    //            if (collision.GetComponent<PickupObject>() != null && collision.GetComponent<PlayerInteractionHandler>().PickupInput)
-    //            {
-    //                TriggerSimpleDialogue();
-    //                Destroy(this.gameObject);
-    //            }
-    //        }
-    //    }
-    //}
 }

@@ -32,6 +32,8 @@ public class Double_SimpleDialogueTrigger : MonoBehaviour
 
     public bool RequireUnlockCondition { get { return m_requireUnlockCondition; } set { m_requireUnlockCondition = value; } }
 
+    private bool m_lockConditionMet = false;
+
     private bool m_completedFirstInteraction = false, m_unlockConditionsMet = false;
 
     /// <summary>
@@ -43,46 +45,9 @@ public class Double_SimpleDialogueTrigger : MonoBehaviour
         {
             FindObjectOfType<SimpleDialogueManager>().StartSimpleDialogue(m_firstInteractionDialogue);
         }
-        else if (!m_requireUnlockCondition)
+        else if (!m_requireUnlockCondition || m_lockConditionMet)
         {
             FindObjectOfType<SimpleDialogueManager>().StartSimpleDialogue(m_secondInteractionDialogue);
-        }
-    }
-
-    public void TriggerSimpleDialogue(PickupObject pickup)
-    {
-        if (m_requireUnlockCondition == true)
-        {
-            if (m_requireToolbox)
-            {
-
-            }
-            else if (m_requireGreenKeycard)
-            {
-
-            }
-            else if (m_requireOrangeKeycard)
-            {
-
-            }
-        }
-
-        if (GetComponent<PickupObject>() != null)
-        {
-            PickupObject pickedUpObject = GetComponent<PickupObject>();
-
-            if (pickedUpObject.IsToolbox == true)
-            {
-                FindObjectOfType<SimpleDialogueManager>().StartSimpleDialogue(m_secondInteractionDialogue);
-            }
-            else if (pickedUpObject.IsStorageRoomKeycard == true)
-            {
-                FindObjectOfType<SimpleDialogueManager>().StartSimpleDialogue(m_secondInteractionDialogue);
-            }
-            else if (pickedUpObject.IsBridgeKeycard == true)
-            {
-                FindObjectOfType<SimpleDialogueManager>().StartSimpleDialogue(m_secondInteractionDialogue);
-            }
         }
     }
 
@@ -92,7 +57,7 @@ public class Double_SimpleDialogueTrigger : MonoBehaviour
         {
             if (GetComponent<BoxCollider2D>().isTrigger)
             {
-                if (!m_requireUnlockCondition)
+                if (!RequireUnlockCondition)
                 {
                     TriggerSimpleDialogue();
 
@@ -111,17 +76,26 @@ public class Double_SimpleDialogueTrigger : MonoBehaviour
                 }
                 else
                 {
-                    if (m_requireToolbox)
+                    if (m_completedFirstInteraction == false)
                     {
-
+                        TriggerSimpleDialogue();
                     }
-                    else if (m_requireGreenKeycard)
+                    else if (m_requireToolbox == collision.GetComponent<PlayerInteractionHandler>().HasToolbox)
                     {
-
+                        m_lockConditionMet = true;
+                        TriggerSimpleDialogue();
+                        collision.GetComponent<PlayerInteractionHandler>().HasToolbox = false;
                     }
-                    else if (m_requireOrangeKeycard)
+                    else if (m_requireGreenKeycard == collision.GetComponent<PlayerInteractionHandler>().HasStorageRoomKeycard)
                     {
-
+                        m_lockConditionMet = true;
+                        collision.GetComponent<PlayerInteractionHandler>().HasStorageRoomKeycard = false;
+                    }
+                    else if (m_requireOrangeKeycard == collision.GetComponent<PlayerInteractionHandler>().HasBridgeKeycard)
+                    {
+                        m_lockConditionMet = true;
+                        TriggerSimpleDialogue();
+                        collision.GetComponent<PlayerInteractionHandler>().HasBridgeKeycard = false;
                     }
                 }
                 
