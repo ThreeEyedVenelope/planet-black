@@ -95,7 +95,8 @@ public class Double_SimpleDialogueTrigger : MonoBehaviour
                         if (collision.GetComponent<PlayerInteractionHandler>().HasStorageRoomKeycard)
                         {
                             m_lockConditionMet = true;
-                            TriggerSimpleDialogue();
+                            collision.GetComponent<Animator>().SetBool("isOpen", true);
+                            //TriggerSimpleDialogue();
                             collision.GetComponent<PlayerInteractionHandler>().HasStorageRoomKeycard = false;
                         }                        
                     }
@@ -104,14 +105,19 @@ public class Double_SimpleDialogueTrigger : MonoBehaviour
                         if (collision.GetComponent<PlayerInteractionHandler>().HasBridgeKeycard)
                         {
                             m_lockConditionMet = true;
-                            TriggerSimpleDialogue();
+                            collision.GetComponent<Animator>().SetBool("isOpen", true);
+                            //TriggerSimpleDialogue();
                             collision.GetComponent<PlayerInteractionHandler>().HasBridgeKeycard = false;
                         }                        
                     }
 
                     if (m_lockConditionMet)
                     {
-                        if (m_destroyParent == true)
+                        if (this.transform.parent.tag == "Door")
+                        {
+                            return;
+                        }
+                        else if (m_destroyParent == true)
                         {
                             Destroy(this.transform.parent.gameObject);
                         }
